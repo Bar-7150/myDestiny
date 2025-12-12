@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Listing Details</h3>
+    <ul>
+        <li><%=listing.title%></li>
+        <li><%=listing.price%></li>
+        <li><%=listing.description%></li>
+        <li><%=listing.location%></li>
+        <li><%=listing.country%></li>
+    </ul>
+    <br>
+    <a href="/listings/<%= listing._id %>/edit">Edit</a>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+        <button>Delete this listing</button>
+    </form>
+    <br>
+    <hr>
+    <div>
+        <h4>leave a Review</h4>
+        <form method="POST" action="/listings/<%= listing._id%>/reviews" >
+            <div>
+                <label for="rating"></label>
+                <input type="range" min="1" max="5" id="rating" name="review[rating]">
+            </div>
+            <div>
+                <label for="comment" >Comments</label>
+                <textarea name="review[comment]" id="comment" cols="30" rows="10" required></textarea>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+    <hr>
+    <h4>All Reviews</h4>
+    <div>
+       
+        <% for(review of listing.reviews){%>
+            <li><%=review.comment%><br>reating:<%=review.rating %></li>
+        <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+            <button>Delete</button>
+        </form>
+            
+        <% } %>
+    </div>
+</body>
+</html>
