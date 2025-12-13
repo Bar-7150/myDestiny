@@ -15,7 +15,6 @@ const Review =require("./models/review.js");
 const session = require("express-session");
 const flash = require("connect-flash");
 const cookieParser=require("cookie-parser");
-const User =require("./models/user.js");
 const userRouter = require("./routes/user.js");
 const authMiddleware = require("./middlewares/authMiddleware.js")
 const reviewOwner = require("./middlewares/reviewOwner.js")
@@ -57,6 +56,9 @@ app.use((req,res,next)=>{
   next();
 })
 
+
+app.engine('ejs',ejsMate);
+
 /*app.use((req,res,next)=>{
   res.locals.success=req.flash("success");
   res.locals.error=req.flash("error")
@@ -79,7 +81,7 @@ app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
 
-app.engine('ejs',ejsMate);
+
 
 // app.get("/testListing", async (req, res) => {
 //   let sampleListing = new Listing({
