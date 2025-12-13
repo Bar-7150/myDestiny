@@ -18,7 +18,8 @@ const cookieParser=require("cookie-parser");
 const User =require("./models/user.js");
 const userRouter = require("./routes/user.js");
 const authMiddleware = require("./middlewares/authMiddleware.js")
-const listOwner=require("./middlewares/listOwner.js")
+const reviewOwner = require("./middlewares/reviewOwner.js")
+
 const MONGO_URL = "mongodb://127.0.0.1:27017/myDestiny";
 
 main()
@@ -112,7 +113,7 @@ app.post("/listings/:id/reviews",authMiddleware,async(req,res)=>{
 //delete review route
 
 // mongo $pull operator:remove from an existing array all instance of a value or values that match a specified condition
-app.delete("/listings/:id/reviews/:reviewId",wrapAsync(async(req,res)=>{
+app.delete("/listings/:id/reviews/:reviewId",reviewOwner,wrapAsync(async(req,res)=>{
   let {id , reviewId}=req.params;
     await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
     await Review.findByIdAndDelete(reviewId);
