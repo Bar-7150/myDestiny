@@ -5,7 +5,8 @@ const wrapAsync=require("../utils/wrapAsync.js");
 const ExpressError=require("../utils/expressError.js");
 const {listingSchema,reviewSchema}=require("../schema.js");
 const Listing =require("../models/listing.js")
-const authMiddleware=require("../middleware.js");
+const authMiddleware = require("../middlewares/authMiddleware.js")
+const listOwner=require("../middlewares/listOwner.js")
 
 
 
@@ -41,6 +42,8 @@ router.get("/:id", async (req, res) => {
     req.flash("error","lISTING YOU REQUESTED IS DOES NOT EXIST!");
     res.redirect("/listings");
   }
+  
+  
   res.render("listings/show.ejs", { listing });
 });
 
@@ -62,7 +65,7 @@ router.post("/",authMiddleware,valideteListing,wrapAsync(
 ) 
 );
 //Edit Route
-router.get("/:id/edit",authMiddleware,wrapAsync( async (req, res) => {
+router.get("/:id/edit",authMiddleware,listOwner,wrapAsync( async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id);
   res.render("listings/edit.ejs", { listing });
@@ -79,7 +82,7 @@ router.put("/:id",authMiddleware,wrapAsync( async (req, res) => {
 }));
 
 //Delete Route
-router.delete("/:id",authMiddleware,wrapAsync( async (req, res) => {
+router.delete("/:id",authMiddleware,listOwner,wrapAsync( async (req, res) => {
   let { id } = req.params;
   let deletedListing = await Listing.findByIdAndDelete(id);
   console.log(deletedListing);

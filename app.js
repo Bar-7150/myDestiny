@@ -17,8 +17,8 @@ const flash = require("connect-flash");
 const cookieParser=require("cookie-parser");
 const User =require("./models/user.js");
 const userRouter = require("./routes/user.js");
-const authMiddleware = require('./middleware.js');
-
+const authMiddleware = require("./middlewares/authMiddleware.js")
+const listOwner=require("./middlewares/listOwner.js")
 const MONGO_URL = "mongodb://127.0.0.1:27017/myDestiny";
 
 main()
@@ -40,7 +40,6 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(cookieParser());
 
-
 app.use(session({
   secret:'secretKey',
   resave:false,
@@ -56,10 +55,6 @@ app.use((req,res,next)=>{
   res.locals.success_msg=req.flash('failed')
   next();
 })
-
-
-
-
 
 /*app.use((req,res,next)=>{
   res.locals.success=req.flash("success");
@@ -83,12 +78,7 @@ app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
 
-
 app.engine('ejs',ejsMate);
-
-
-
-
 
 // app.get("/testListing", async (req, res) => {
 //   let sampleListing = new Listing({
@@ -115,10 +105,10 @@ app.post("/listings/:id/reviews",authMiddleware,async(req,res)=>{
    listing.reviews.push(newReview);
    await newReview.save();
    await listing.save();
-
-  res.redirect(`/listings/${listing._id}`)
-
+   res.redirect(`/listings/${listing._id}`)
+   
 });
+
 //delete review route
 
 // mongo $pull operator:remove from an existing array all instance of a value or values that match a specified condition
@@ -126,8 +116,6 @@ app.delete("/listings/:id/reviews/:reviewId",wrapAsync(async(req,res)=>{
   let {id , reviewId}=req.params;
     await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
     await Review.findByIdAndDelete(reviewId);
-   
-
   res.redirect(`/listings/${id}`)
 })) ;
 

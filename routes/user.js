@@ -2,8 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const wrapAsync=require('../utils/wrapAsync')
-const passport=require('passport');
+const wrapAsync=require('../utils/wrapAsync');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const JWT_SECRET=process.env.JWT_SECRET
