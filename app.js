@@ -17,6 +17,7 @@ const flash = require("connect-flash");
 const cookieParser=require("cookie-parser");
 const User =require("./models/user.js");
 const userRouter = require("./routes/user.js");
+const authMiddleware = require('./middleware.js');
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/myDestiny";
 
@@ -107,9 +108,10 @@ app.engine('ejs',ejsMate);
 
 //reviews
 //post route
-app.post("/listings/:id/reviews",async(req,res)=>{
+app.post("/listings/:id/reviews",authMiddleware,async(req,res)=>{
    let listing=await Listing.findById(req.params.id);
    let newReview=new Review(req.body.review);
+   newReview.author=req.userId;
    listing.reviews.push(newReview);
    await newReview.save();
    await listing.save();

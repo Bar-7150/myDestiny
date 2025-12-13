@@ -49,6 +49,8 @@ router.post("/",authMiddleware,valideteListing,wrapAsync(
   async (req, res,next) => {
    
   const newListing = new Listing(req.body.listing);
+  console.log(req.userId);
+  newListing.owner=req.userId;
    
  // let {title,description,image,price,location,country} =req.body;
 
