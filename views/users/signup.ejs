@@ -1,27 +1,27 @@
 <% layout("/layouts/boilerplate") %>
 
-<div>
+<div class="form">
 
-    <h1>SignUp on myDestiny</h1>
+    <h1 style="font-family: Dancing Script">SignUp on myDestiny</h1>
     
     <div>
         <form action="/signup" method="POST">
                  <div>
                     <label for="username">username</label>
-                    <input id="username" type="text" name="username" required>
+                    <input class="nonDes" id="username" type="text" name="username" required>
                  </div>
-                 <br>
+                 
                  <div>
                     <label for="email">Email</label>
-                    <input id="email" type="text" name="email" required>
+                    <input class="nonDes" id="email" type="text" name="email" required>
                  </div>
-                 <br>
+                 
                  <div>
                     <label for="password">Password</label>
-                    <input id="password" type="text" name="password" required>
+                    <input class="nonDes" id="password" type="text" name="password" required>
                  </div>
                  <br>
-                 <button>Sign Up</button>
+                 <button class="btn">Sign Up</button>
         </form>
     </div>
 </div>

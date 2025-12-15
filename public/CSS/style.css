@@ -137,7 +137,7 @@ li a{
    
 }
 }
-/*add new li30pxsting*/
+/*add new listing*/
 .nonDes{
    height: 20px;
    border-radius: 10px;
@@ -148,7 +148,7 @@ li a{
     
    border-radius: 15px;
 }
-.newListing{
+.form{
    text-align: center;
    height: 70vh;
 }
@@ -156,4 +156,7 @@ li a{
      width: 50px;
      margin-top: 30px;
 }
-/*new List*/
+/*edit List*/
+.btn{
+   width: 60px;
+}

@@ -1,62 +1,60 @@
 <% layout("/layouts/boilerplate") %>
 
-   
-    
-    <div class="slider-container">
-        <img src="https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images-750x420.jpg"
-            alt="Image 1">
-    </div>
-
-
-    <div class="mostRecom">
-        <h4>Most Recomended</h4>
-        <div class="homeShow">
-            
-            <% for(let listing of allListings){ %>
-                <div class="card">
-
-                    
-                    <a href="/listings/<%=listing._id%>">
-                        <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
-                        <%=listing.title %>
-                    </a>
-                </div>
-                <%}%>
-        </div>
-    <div class="yourFav">
-        <h4>Your favorite</h4>
-        <div class="homeShow">
-            
-            <% for(let listing of allListings){ %>
-                <div class="card">
-
-                    <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
-                    <a href="/listings/<%=listing._id%>">
-                        <%=listing.title %>
-                    </a>
-                </div>
-                <%}%>
-        </div>
-    <div class="topTen">
-        <h4>Top 10 Places</h4>
-        <div class="homeShow">
-            
-            <% for(let listing of allListings){ %>
-                <div class="card">
-
-                    <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
-                    <a href="/listings/<%=listing._id%>">
-                        <%=listing.title %>
-                    </a>
-                </div>
-                <%}%>
-        </div>
-
-
-    </div>
     <div>
+        <div class="slider-container">
+            <img src="https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images-750x420.jpg"
+                alt="Image 1">
+        </div>
 
+
+        <div class="mostRecom">
+            <h4>Most Recomended</h4>
+            <div class="homeShow">
+
+                <% for(let listing of allListings){ %>
+                    <div class="card">
+
+
+                        <a href="/listings/<%=listing._id%>">
+                            <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
+                            <%=listing.title %>
+                        </a>
+                    </div>
+                    <%}%>
+            </div>
+            <div class="yourFav">
+                <h4>Your favorite</h4>
+                <div class="homeShow">
+
+                    <% for(let listing of allListings){ %>
+                        <div class="card">
+
+                            <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
+                            <a href="/listings/<%=listing._id%>">
+                                <%=listing.title %>
+                            </a>
+                        </div>
+                        <%}%>
+                </div>
+                <div class="topTen">
+                    <h4>Top 10 Places</h4>
+                    <div class="homeShow">
+
+                        <% for(let listing of allListings){ %>
+                            <div class="card">
+
+                                <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
+                                <a href="/listings/<%=listing._id%>">
+                                    <%=listing.title %>
+                                </a>
+                            </div>
+                            <%}%>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
     </div>
-
-
-    </body>

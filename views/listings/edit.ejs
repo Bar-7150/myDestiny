@@ -1,36 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wanderlust</title>
-  </head>
-  <body>
-    <h3>Edit your Listing</h3>
+<% layout("/layouts/boilerplate") %>
+<div class="form">
+ <h3>Edit your Listing</h3>
     <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
-      <input name="listing[title]" value="<%= listing.title %>" type="text"  required />
-      <br /><br />
-      <textarea name="listing[description]"   required>
-<%= listing.description %></textarea
-      >
-      <br /><br />
-      <input name="listing[image]" value="<%= listing.image %>" type="text" />
-      <br /><br />
-      <input name="listing[price]" value="<%= listing.price %>" type="number" />
-      <br /><br />
+      <label for="title">Title:</label>
       <input
-        name="listing[country]"
-        value="<%= listing.country %>"
-        type="text"
-      />
-      <br /><br />
+      class="nonDes"
+       name="listing[title]" value="<%= listing.title %>" type="text"  required />
+      <br />
+      <label for="description">Description:</label>
       <input
+      class="des"
+       name="listing[description]"  type="text" required value="<%= listing.description %>"
+ />
+      <br />
+      <label for="image">image_url:</label>
+      <input
+      class="nonDes"
+       name="listing[image]" value="<%= listing.image %>" type="text" />
+      <br />
+      <label for="price">Price:</label>
+      <input
+      class="nonDes"
+       name="listing[price]" value="<%= listing.price %>" type="number" />
+      <br />
+       <label for="location">Location:</label>
+        <input
+        class="nonDes"
         name="listing[location]"
         value="<%= listing.location %>"
         type="text"
       />
-      <br /><br />
-      <button>Edit</button>
+      <br />
+      
+      <label for="country">Country:</label>
+     <input class="nonDes"
+        name="listing[country]"
+        value="<%= listing.country %>"
+        type="text"
+      />
+      <br />
+      <button class="btn editbtn">Edit</button>
     </form>
-  </body>
-</html>
+  
+
+</div>
+   
