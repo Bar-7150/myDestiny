@@ -4,6 +4,150 @@
 .container{
    color: rgb(212, 142, 120);
 }
-.nav{
-   color: rgb(244, 2, 2); 
+.navbar{
+   display: grid;
+   grid-template-columns: 1fr 5fr 2fr;
+    gap: 5vw;
 }
+#logo{
+   margin-left:5vw;
+   color: rgb(238, 114, 77);
+}
+.nav_items{
+     display: flex; gap: 5vw;list-style-type:none;
+     justify-content: flex-end;
+}
+
+li a{
+   text-decoration: none;
+}
+/*Home Page*/
+
+.btn{
+   height: 30px;
+   border: none;
+   border-radius: 20px;
+   background-color: rgb(229, 106, 69);
+   color: white;
+  
+}
+.addbtnbox{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.bthAddList{
+   
+   position: absolute;
+   top : 20px;
+   right: 5vw;
+}
+.slider-container{
+   text-align: center;
+   margin: 10px;
+}
+.slider-container img {
+   height: 25vh;
+   width: 95vw;
+    object-fit: cover; 
+    border-radius: 20px;
+}
+.homeShow{
+   display: flex;
+   gap: 10px;
+   overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+/*All Listing*/
+.card img{
+   height: 300px;
+   width: 300px;
+   border-radius: 20px;
+}
+.card a{
+  text-decoration: none;
+  color: rgb(212, 142, 120);
+}
+
+.card{
+  
+   text-align: center;
+}
+.allListings{
+   display:grid;
+   grid-template-columns:repeat(3,1fr);
+   grid-template-rows: repeat(auto,1fr);
+   gap: 25px;
+}
+
+@media screen and (max-width:750px){
+   .allListings{
+      grid-template-columns:1fr;
+   }
+   .slider-container img{
+    width: 90vw;
+    height: 25vh;
+   }
+.nav_menu{
+   display: none;
+}
+.nav_bar{
+   margin-right: 20px;
+
+}
+
+}
+@media screen and (min-width:750px) and (max-width:900px){
+   .allListings{
+      grid-template-columns:repeat(2,1fr);
+   }
+    .slider-container img{
+    width: 94vw;
+    height: 30vh;
+   }
+   .nav_bar{
+   display: none;
+}
+  
+}
+@media screen and (min-width:900px) and (max-width:1200px){
+   .nav_bar{
+      display: none;
+   }
+}
+   
+@media screen and (min-width:1200px) {
+   .allListings{
+      grid-template-columns:repeat(4,1fr);
+   }
+    .slider-container img{
+    width: 97vw;
+    height: 25vh;
+   }
+   .nav_bar{
+   display: none;
+   
+}
+}
+/*add new li30pxsting*/
+.nonDes{
+   height: 20px;
+   border-radius: 10px;
+   margin: 10px;
+}
+.des{
+   height: 40px;
+    
+   border-radius: 15px;
+}
+.newListing{
+   text-align: center;
+   height: 70vh;
+}
+.add{
+     width: 50px;
+     margin-top: 30px;
+}
+/*new List*/

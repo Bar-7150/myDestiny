@@ -1,26 +1,26 @@
 <% layout("/layouts/boilerplate") %>
- 
+
     <% if (token==undefined) { %>
         <!-- HTML content to display if the condition is true -->
         <div>
-             <img src="" alt="">
+            <img src="" alt="">
 
-                <div>
-                    <form action="/login" method="GET">
-                        <button>Login</button>
-                    </form>
-                    <form action="/signin" method="GET">
-                        <button>SignUp</button>
-                    </form>
+            <div>
+                <form action="/login" method="GET">
+                    <button>Login</button>
+                </form>
+                <form action="/signin" method="GET">
+                    <button>SignUp</button>
+                </form>
 
-                </div>
+            </div>
 
-            
+
         </div>
 
         <% } else { %>
             <!-- HTML content to display if the condition is false -->
-           <img src="" alt="">
+            <img src="<%= %>" alt="">
             <h1>
                 <%= %>
             </h1>
@@ -33,7 +33,9 @@
                     <li><a href="/listings/new">Add Listing</a></li>
                     <li><a href="/listings/me">My Listing</a></li>
                     <li><a href="/listings/myReviews">My Reviews</a></li>
+                    <li><a href="/user/myBookings">My Bookings</a></li>
                     <li><a href="/logout">LogOut</a></li>
+
                 </ul>
             </div>
             <% } %>

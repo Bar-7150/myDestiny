@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>create new listing
-    <h3></h3>
+<% layout("/layouts/boilerplate") %>
+  <div class="newListing">
+    <h3>Create New Listing</h3>
     <form method="POST" action="/listings">
-        <input type="text" name="listing[title]" placeholder="enter title" required><br>
-        <textarea  name="listing[description]" placeholder="describe about your place" required></textarea><br>
-        <input type="text" name="listing[image]" placeholder="enter image url"><br>
-        <input type="number" name="listing[price]" placeholder="enter price"><br>
-        <input type="text" name="listing[location]" placeholder="enter location"><br>
-        <input type="text" name="listing[country]" placeholder="enter country"><br>
-        <button>ADD</button>
+        <label for="title">Title</label>
+        <input class="nonDes" type="text" name="listing[title]" placeholder="enter the place name" required><br>
+        <label for="description">Description:</label>
+        <input  class="des" name="listing[description]" placeholder="describe about your place" required/><br>
+        <label for="image">image_url:</label>
+        <input class="nonDes" type="text" name="listing[image]" placeholder="enter image url"><br>
+        <label for="price">name of the Place:</label>
+        <input class="nonDes" type="number" name="listing[price]" placeholder="enter price"><br>
+        <label for="location">name of the Place:</label>
+        <input class="nonDes" type="text" name="listing[location]" placeholder="enter location"><br>
+        <label for="country">name of the Place:</label>
+        <input class="nonDes" type="text" name="listing[country]" placeholder="enter country"><br>
+        <button class="btn add">ADD</button>
     </form>
-</body>
-</html>
+  </div>
+   

@@ -77,8 +77,9 @@ app.engine('ejs',ejsMate);
 app.use("/listings",listingRouter)
 app.use("/",userRouter)
 
-app.get("/", (req, res) => {
-  res.send("Hi, I am root");
+app.get("/",async (req, res) => {
+  const allListings=await Listing.find({})
+  res.render("./listings/homePage.ejs",{allListings});
 });
 
 

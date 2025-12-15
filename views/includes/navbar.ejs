@@ -1,8 +1,21 @@
-<div>
-    <ul class="nav" style="display: flex; gap: 10px;list-style-type:none;">
-        <li><a href="/">Home</a></li>
-        <li><a href="/listings">All Listing</a></li>
-        <li><a href="/listings/me">My Listing</a></li>
-        <li><a href="/myProfile">Profile</a></li>
+<div class="navbar">
+    <div id="logo">
+        <h4>myDestiny</h4>
+    </div>
+
+
+    <ul class="nav_items" >
+        <li class="nav_menu"><a href="/">Home</a></li>
+        <li class="nav_menu"><a href="/listings">All Listing</a></li>
+        <li class="nav_menu"><a href="/listings/me">My Listing</a></li>
+        <li class="nav_menu"><a href="/myProfile">Profile</a></li>
+        <li class="nav_bar"><i class="fa-solid fa-bars"></i></li>
     </ul>
+    
+    <div class="addbtnbox">
+        <form method="GET" action="/listings/new">
+            <button class="btn btnAddList">create new listing</button>
+        </form>
+
+    </div>
 </div>
