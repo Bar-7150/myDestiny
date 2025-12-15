@@ -15,8 +15,9 @@
             <% for(let listing of allListings){ %>
                 <div class="card">
 
-                    <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
+                    
                     <a href="/listings/<%=listing._id%>">
+                        <img src="<%=listing.image %>" alt="image of   <%=listing.title %> ">
                         <%=listing.title %>
                     </a>
                 </div>

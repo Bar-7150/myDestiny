@@ -1,5 +1,6 @@
-*{
+body{
     background-color: rgb(232, 245, 245);
+     font-family: "Plus Jakarta Sans", sans-serif;
 }
 .container{
    color: rgb(212, 142, 120);
@@ -12,10 +13,14 @@
 #logo{
    margin-left:5vw;
    color: rgb(238, 114, 77);
+   font-family: "Dancing Script" !important;
+    font-optical-sizing: auto;
+   font-weight: 700;
 }
 .nav_items{
      display: flex; gap: 5vw;list-style-type:none;
      justify-content: flex-end;
+     font-size: 13px;
 }
 
 li a{
@@ -24,7 +29,7 @@ li a{
 /*Home Page*/
 
 .btn{
-   height: 30px;
+   height: 33px;
    border: none;
    border-radius: 20px;
    background-color: rgb(229, 106, 69);
@@ -35,6 +40,7 @@ li a{
  display: flex;
  align-items: center;
  justify-content: center;
+
 }
 .bthAddList{
    
