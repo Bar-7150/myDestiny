@@ -1,51 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>Listing Details</h3>
-    <ul>
-        <li><%=listing.title%></li>
-        <li><%=listing.price%></li>
-        <li><%=listing.description%></li>
-        <li><%=listing.location%></li>
-        <li><%=listing.country%></li>
-    </ul>
-    <br>
-    <a href="/listings/<%= listing._id %>/edit">Edit</a>
-    <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-        <button>Delete this listing</button>
-    </form>
-    <br>
-    <hr>
+<% layout("/layouts/boilerplate") %>
     <div>
-        <h4>leave a Review</h4>
-        <form method="POST" action="/listings/<%= listing._id%>/reviews" >
-            <div>
-                <label for="rating"></label>
-                <input type="range" min="1" max="5" id="rating" name="review[rating]">
-            </div>
-            <div>
-                <label for="comment" >Comments</label>
-                <textarea name="review[comment]" id="comment" cols="30" rows="10" required></textarea>
-            </div>
-            <button>Submit</button>
-        </form>
-    </div>
-    <hr>
-    <h4>All Reviews</h4>
-    <div>
+
        
-        <% for(review of listing.reviews){%>
-            <li><%=review.comment%><br>reating:<%=review.rating %></li>
-        <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
-            <button>Delete</button>
+        <div class="showDet">
+             <h3>Listing Details</h3>
+            <h4>
+                <%=listing.title%>
+            </h4>
+            <img src="<%=listing.image%>" alt="">
+            <p>
+                <%=listing.description%>
+            </p>
+            <h4>
+              &#8377;   <%=listing.price%> &#47; Day
+            </h4>
+            <p><i class="fas fa-map-marker-alt"></i> <%=listing.location%>,<%=listing.country%>
+            </p>
+        </div>
+
+        <br >
+        <div class="showBtns">
+
+            <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                <button style="background-color: rgb(28, 99, 192); 
+                width: 60px;" class="btn">Book</button>
+            </form>
+             <a    style="color: aliceblue;
+              
+              font-size: 14px; 
+              background-color: rgb(252, 118, 56); 
+              text-decoration: none; 
+              width: 60px; 
+              display: flex; 
+              height: 35px; 
+              justify-content: center; 
+              align-items: center;
+              border-radius: 20px;
+              " 
+              href="/listings/<%= listing._id %>/edit">Edit</a>
+        <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+            <button style="background-color: red; width: 60px; " class="btn">Delete</button>
         </form>
-            
-        <% } %>
+        </div>
+        
+        <br>
+        <hr>
+        <div>
+            <h4>leave a Review</h4>
+            <form method="POST" action="/listings/<%= listing._id%>/reviews">
+                <div>
+                    <label for="rating"></label>
+                    <input type="range" min="1" max="5" id="rating" name="review[rating]">
+                </div>
+                <div>
+                    <label for="comment">Comments</label>
+                    <textarea name="review[comment]" id="comment" cols="30" rows="10" required></textarea>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+        <hr>
+        <h4>All Reviews</h4>
+        <div>
+
+            <% for(review of listing.reviews){%>
+                <li>
+                    <%=review.comment%><br>reating:<%=review.rating %>
+                </li>
+                <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                    <button>Delete</button>
+                </form>
+
+                <% } %>
+        </div>
+
+
     </div>
-</body>
-</html>

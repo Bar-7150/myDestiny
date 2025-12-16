@@ -29,7 +29,7 @@ li a{
 /*Home Page*/
 
 .btn{
-   height: 33px;
+   height: 35px;
    border: none;
    border-radius: 20px;
    background-color: rgb(229, 106, 69);
@@ -88,55 +88,6 @@ li a{
    gap: 25px;
 }
 
-@media screen and (max-width:750px){
-   .allListings{
-      grid-template-columns:1fr;
-   }
-   .slider-container img{
-    width: 90vw;
-    height: 25vh;
-   }
-.nav_menu{
-   display: none;
-}
-.nav_bar{
-   margin-right: 20px;
-
-}
-
-}
-@media screen and (min-width:750px) and (max-width:900px){
-   .allListings{
-      grid-template-columns:repeat(2,1fr);
-   }
-    .slider-container img{
-    width: 94vw;
-    height: 30vh;
-   }
-   .nav_bar{
-   display: none;
-}
-  
-}
-@media screen and (min-width:900px) and (max-width:1200px){
-   .nav_bar{
-      display: none;
-   }
-}
-   
-@media screen and (min-width:1200px) {
-   .allListings{
-      grid-template-columns:repeat(4,1fr);
-   }
-    .slider-container img{
-    width: 97vw;
-    height: 25vh;
-   }
-   .nav_bar{
-   display: none;
-   
-}
-}
 /*add new listing*/
 .nonDes{
    height: 20px;
@@ -157,6 +108,113 @@ li a{
      margin-top: 30px;
 }
 /*edit List*/
-.btn{
+.editbtn{
    width: 60px;
+}
+/*footer*/
+footer{
+   text-align: center;
+}
+footer a{
+   text-decoration: none;
+   color: rgb(0, 0, 0);
+}
+.social_media{
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+}
+/*show List*/
+.showDet{
+   margin:10px 5vw 10px 5vw;
+}
+.showDet img{
+    width: 85vw;
+    height: 35vh;
+    border-radius: 20px;
+}
+.showBtns{
+   width: 50vw;
+   display: flex;
+   justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:650px){
+   .allListings{
+      grid-template-columns:1fr;
+   }
+   .slider-container img{
+    width: 90vw;
+    height: 25vh;
+   }
+.nav_menu{
+   display: none;
+}
+.nav_bar{
+   margin-right: 20px;
+
+}
+
+}
+@media screen and (min-width:650px) and (max-width:900px){
+   .allListings{
+      grid-template-columns:repeat(2,1fr);
+   }
+    .slider-container img{
+    width: 94vw;
+    height: 30vh;
+   }
+   .nav_bar{
+   display: none;
+}
+  .showDet img{
+    width: 50vw;
+    height: 35vh;
+}
+
+  
+}
+@media screen and (min-width:900px) and (max-width:1200px){
+   .nav_bar{
+      display: none;
+   }
+    .showDet img{
+    width: 35vw;
+    height: 40vh;
+}
+}
+   
+@media screen and (min-width:1200px) {
+   .allListings{
+      grid-template-columns:repeat(4,1fr);
+   }
+    .slider-container img{
+    width: 97vw;
+    height: 25vh;
+   }
+   .nav_bar{
+   display: none;
+   
+}
+   .showDet img{
+    width: 30vw;
+    height: 40vh;
+}
 }
