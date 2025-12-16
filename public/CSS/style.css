@@ -68,8 +68,8 @@ li a{
 
 /*All Listing*/
 .card img{
-   height: 300px;
-   width: 300px;
+   height:30vh;
+   width: 30vw;
    border-radius: 20px;
 }
 .card a{
@@ -140,7 +140,11 @@ footer a{
 }
 
 
+/*profile*/
+.profile{
+   height: 70vh;
 
+}
 
 
 
@@ -160,9 +164,9 @@ footer a{
    .allListings{
       grid-template-columns:1fr;
    }
-   .slider-container img{
-    width: 90vw;
-    height: 25vh;
+   .card img{
+    width: 70vw;
+    height: 35vh;
    }
 .nav_menu{
    display: none;
@@ -177,9 +181,9 @@ footer a{
    .allListings{
       grid-template-columns:repeat(2,1fr);
    }
-    .slider-container img{
-    width: 94vw;
-    height: 30vh;
+    .card img{
+    width: 42vw;
+    height: 35vh;
    }
    .nav_bar{
    display: none;
@@ -205,9 +209,9 @@ footer a{
    .allListings{
       grid-template-columns:repeat(4,1fr);
    }
-    .slider-container img{
-    width: 97vw;
-    height: 25vh;
+    .card img{
+    width: 25vw;
+    height: 30vh;
    }
    .nav_bar{
    display: none;
