@@ -15,8 +15,19 @@ const userSchema = new Schema({
     password:{
         type:String,
         required:true
-    }
-
+    },
+     myReviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Review"
+        }
+    ],
+     myListings: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Listing"
+        }
+    ],
 });
 
 

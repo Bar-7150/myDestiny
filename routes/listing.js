@@ -7,7 +7,7 @@ const {listingSchema,reviewSchema}=require("../schema.js");
 const Listing =require("../models/listing.js")
 const authMiddleware = require("../middlewares/authMiddleware.js")
 const listOwner=require("../middlewares/listOwner.js")
-
+let User = require("../models/user.js");
 
 
 const valideteListing=(req,res,next)=>{
@@ -50,15 +50,18 @@ router.get("/:id", async (req, res) => {
 //Create Route
 router.post("/",authMiddleware,valideteListing,wrapAsync(
   async (req, res,next) => {
-   
+  let user=await User.findById(req.userId);
   const newListing = new Listing(req.body.listing);
-  console.log(req.userId);
+  
   newListing.owner=req.userId;
+
    
  // let {title,description,image,price,location,country} =req.body;
 
   
   await newListing.save();
+  user.myListings.push(newListing._id);
+  await user.save();
   req.flash("success","New Listing Created!");
   res.redirect("/listings");
   }

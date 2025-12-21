@@ -9,7 +9,7 @@ const ejsMate= require('ejs-mate')
 //ejs-mate: use same parts of code in different pages
 const ExpressError = require("./utils/expressError.js")
 const wrapAsync=require("./utils/wrapAsync.js")
-
+let User = require("./models/user.js");
 const listingRouter=require("./routes/listing.js");
 const Review =require("./models/review.js");
 const session = require("express-session");
@@ -17,7 +17,8 @@ const flash = require("connect-flash");
 const cookieParser=require("cookie-parser");
 const userRouter = require("./routes/user.js");
 const authMiddleware = require("./middlewares/authMiddleware.js")
-const reviewOwner = require("./middlewares/reviewOwner.js")
+const reviewOwner = require("./middlewares/reviewOwner.js");
+const { log } = require('console');
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/myDestiny";
 
@@ -104,13 +105,15 @@ app.get("/",async (req, res) => {
 //post route
 app.post("/listings/:id/reviews",authMiddleware,async(req,res)=>{
    let listing=await Listing.findById(req.params.id);
+   let user=await User.findById(req.userId);
    let newReview=new Review(req.body.review);
    newReview.author=req.userId;
    listing.reviews.push(newReview);
    await newReview.save();
+   user.myReviews.push(newReview._id);
    await listing.save();
-   res.redirect(`/listings/${listing._id}`)
-   
+   await user.save();
+   res.redirect(`/listings/${listing._id}`); 
 });
 
 //delete review route

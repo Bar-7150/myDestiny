@@ -49,15 +49,22 @@ li a{
    right: 5vw;
 }
 .slider-container{
-   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: rgb(235, 121, 45);
+   font-size: 20px;
+   font-family:"Dancing Script" !important ;
    margin: 10px;
-}
-.slider-container img {
+   background-image: url(https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images-750x420.jpg);
+   background-position: bottom;
+   background-repeat: no-repeat;
    height: 25vh;
    width: 95vw;
-    object-fit: cover; 
-    border-radius: 20px;
+   border-radius: 20px;
 }
+
 .homeShow{
    display: flex;
    gap: 10px;
@@ -177,7 +184,7 @@ footer a{
 }
 
 }
-@media screen and (min-width:650px) and (max-width:900px){
+@media screen and (min-width:650px) and (max-width:800px){
    .allListings{
       grid-template-columns:repeat(2,1fr);
    }
@@ -195,13 +202,21 @@ footer a{
 
   
 }
-@media screen and (min-width:900px) and (max-width:1200px){
+@media screen and (min-width:800px) and (max-width:1200px){
    .nav_bar{
       display: none;
    }
     .showDet img{
     width: 35vw;
     height: 40vh;
+}
+.slider-container{
+  
+   background-image: url(https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images-750x420.jpg);
+   background-position: bottom;
+   background-size: 95vw 25vh ;
+   background-repeat: no-repeat;
+   
 }
 }
    
@@ -220,5 +235,13 @@ footer a{
    .showDet img{
     width: 30vw;
     height: 40vh;
+}
+.slider-container{
+  
+   background-image: url(https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images-750x420.jpg);
+   background-position: bottom;
+   background-size: 95vw 25vh ;
+   background-repeat: no-repeat;
+   
 }
 }

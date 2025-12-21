@@ -5,6 +5,7 @@ const User = require("../models/user");
 const wrapAsync=require('../utils/wrapAsync');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const authMiddleware = require('../middlewares/authMiddleware');
 const JWT_SECRET=process.env.JWT_SECRET
 
 router.get("/myProfile",(req,res)=>{
@@ -12,7 +13,20 @@ router.get("/myProfile",(req,res)=>{
   
   res.render("users/profile.ejs",{token});
 })
+router.get("/myListings",authMiddleware,async (req,res)=>{
+    let user=await User.findById(req.userId);
+    let myListings=user.myListings;
+    console.log(myListings);
 
+    res.render("users/myListings.ejs",{myListings})
+})
+router.get("/myReviews",authMiddleware,async (req,res)=>{
+    let user=await User.findById(req.userId);
+    let myReviews=user.myReviews;
+    console.log(myReviews);
+
+    res.render("users/myReviews.ejs",{myReviews})
+})
 router.get("/signup",(req,res)=>{
     res.render("users/signup.ejs")
 })
