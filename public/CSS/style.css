@@ -236,7 +236,7 @@ footer a{
 }
 
 .showDes{
-   margin-top: 5vh;
+   margin-top: 1vh;
    margin-left: 5vw;
    grid-area: 2/1/3/2;
 }
@@ -253,7 +253,10 @@ footer a{
    margin: 10px;
    
 }
-
+.h4AllRev{
+    grid-area: 5/1/6/3;
+    margin-left: 5vw;
+}
 .allReviews{
     margin-left: 5vw;
     grid-area: 6/1/7/2;
@@ -266,7 +269,8 @@ footer a{
 
 }
 
-@media screen and (min-width:650px) and (max-width:800px){
+
+@media screen and (min-width:650px) and (max-width:900px){
    .allListings{
       grid-template-columns:repeat(2,1fr);
    }
@@ -282,36 +286,41 @@ footer a{
     height: 35vh;
 }
 .showPage{
-   grid-template-columns: 1fr;
-   grid-template-rows:2fr 1fr auto;
+   grid-template-columns: 1fr ;
+   grid-template-rows:2.2fr 1fr auto;
    
 }
 .showDet{
    margin:0px 5vw 10px 5vw;
-   
+   grid-area: 1/1/2/2;
 }
 
 .showDes{
-   margin-top: 5vh;
+   margin-top: 1vh;
    margin-left: 5vw;
+   grid-area: 2/1/3/2;
 }
 .showBtns{
-   
+   grid-area: 3/1/4/2;
    margin-left: 10vw;
+   margin-bottom: 5vh;
 }
 .leaveReview{
-   
-   margin-left: 5vw;
+   grid-area: 4/1/5/2;
+   position: relative;
 }
 
 .review{
    margin: 10px;
    
 }
-
+.h4AllRev{
+    grid-area: 5/1/6/3;
+    margin-left: 5vw;
+}
 .allReviews{
     margin-left: 5vw;
-
+    grid-area: 6/1/7/2;
    display:flex;
    overflow:scroll;
    -ms-overflow-style: none;  /* IE and Edge */
@@ -320,7 +329,7 @@ footer a{
 }
   
 }
-@media screen and (min-width:800px) and (max-width:1200px){
+@media screen and (min-width:900px) and (max-width:1200px){
    .nav_bar{
       display: none;
    }
@@ -336,8 +345,17 @@ footer a{
    background-repeat: no-repeat;
    
 }
+.h4AllRev{
+    grid-area: 4/1/5/3;
+    margin-left: 5vw;
 }
+.allReviews{
+   display: grid;
+   grid-template-columns: 1fr 1fr ;
+   grid-template-rows: repeat(30vh,auto);
    
+}
+}
 @media screen and (min-width:1200px) {
    .allListings{
       grid-template-columns:repeat(4,1fr);
@@ -355,7 +373,6 @@ footer a{
     height: 40vh;
 }
 .slider-container{
-  
    background-image: url(https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images-750x420.jpg);
    background-position: bottom;
    background-size: 95vw 25vh ;
