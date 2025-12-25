@@ -1,6 +1,7 @@
 body{
     background-color: rgb(232, 245, 245);
      font-family: "Plus Jakarta Sans", sans-serif;
+
 }
 .container{
    color: rgb(212, 142, 120);
@@ -132,40 +133,81 @@ footer a{
    gap: 30px;
 }
 /*show List*/
+.showPage{
+   display: grid;
+   
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows:2fr 1fr auto;
+   
+}
 .showDet{
    margin:10px 5vw 10px 5vw;
+   grid-area: 1/1/3/2;
 }
 .showDet img{
     width: 85vw;
     height: 35vh;
     border-radius: 20px;
 }
+.showDes{
+   margin-top: 15vh;
+}
 .showBtns{
    width: 50vw;
    display: flex;
    justify-content: space-around;
+   margin-top: 4vh;
 }
-
-
+.leaveReview{
+   grid-area: 3/1/4/3;
+   margin-left: 5vw;
+}
+#comment{
+    border-radius: 10px;
+    background-color: rgb(241, 223, 218);
+    margin-top: 20px;
+}
+.review{
+   margin: 15px;
+   padding: 0;
+   height: 20vh;
+   grid-area: 5/1/7/2;
+   
+   border-radius:10px;
+   width:300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: aliceblue;
+}
+.review p{
+   margin: 0;
+  
+}
+.review h5{
+   margin: 0;
+  
+}
+.allReviews{
+    margin-left: 5vw;
+   grid-area: 5/1/6/3;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: repeat(30vh,auto);
+  
+   
+}
+.revDelt{
+   position: relative;
+   bottom: 2vh;
+   left: 70px;
+}
 /*profile*/
 .profile{
    height: 70vh;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (max-width:650px){
    .allListings{
@@ -183,7 +225,47 @@ footer a{
 
 }
 
+.showPage{
+   grid-template-columns: 1fr ;
+   grid-template-rows:2fr 1fr auto;
+   
 }
+.showDet{
+   margin:0px 5vw 10px 5vw;
+   grid-area: 1/1/2/2;
+}
+
+.showDes{
+   margin-top: 5vh;
+   margin-left: 5vw;
+   grid-area: 2/1/3/2;
+}
+.showBtns{
+   grid-area: 3/1/4/2;
+   margin-left: 10vw;
+}
+.leaveReview{
+   grid-area: 4/1/5/2;
+   margin-left: 5vw;
+}
+
+.review{
+   margin: 10px;
+   
+}
+
+.allReviews{
+    margin-left: 5vw;
+    grid-area: 6/1/7/2;
+   display:flex;
+   overflow:scroll;
+   -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+   
+}
+
+}
+
 @media screen and (min-width:650px) and (max-width:800px){
    .allListings{
       grid-template-columns:repeat(2,1fr);
@@ -199,7 +281,43 @@ footer a{
     width: 50vw;
     height: 35vh;
 }
+.showPage{
+   grid-template-columns: 1fr;
+   grid-template-rows:2fr 1fr auto;
+   
+}
+.showDet{
+   margin:0px 5vw 10px 5vw;
+   
+}
 
+.showDes{
+   margin-top: 5vh;
+   margin-left: 5vw;
+}
+.showBtns{
+   
+   margin-left: 10vw;
+}
+.leaveReview{
+   
+   margin-left: 5vw;
+}
+
+.review{
+   margin: 10px;
+   
+}
+
+.allReviews{
+    margin-left: 5vw;
+
+   display:flex;
+   overflow:scroll;
+   -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+   
+}
   
 }
 @media screen and (min-width:800px) and (max-width:1200px){
