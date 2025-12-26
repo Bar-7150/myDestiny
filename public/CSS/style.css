@@ -329,7 +329,7 @@ footer a{
 }
   
 }
-@media screen and (min-width:900px) and (max-width:1200px){
+@media screen and (min-width:900px) and (max-width:1100px){
    .nav_bar{
       display: none;
    }
@@ -355,8 +355,12 @@ footer a{
    grid-template-rows: repeat(30vh,auto);
    
 }
+#comment{
+   height: 20vh;
+   width: 60vw;
 }
-@media screen and (min-width:1200px) {
+}
+@media screen and (min-width:1100px) {
    .allListings{
       grid-template-columns:repeat(4,1fr);
    }
@@ -378,5 +382,80 @@ footer a{
    background-size: 95vw 25vh ;
    background-repeat: no-repeat;
    
+}
+.showPage{
+   display: grid;
+   
+   grid-template-columns: 1fr 2fr;
+   grid-template-rows: 1.5fr 0.5fr auto;
+   
+}
+.showDet{
+   margin:10px 5vw 10px 5vw;
+   grid-area: 1/1/2/2;
+}
+
+.showDes{
+   margin-top: 1vh;
+   margin-left: 5vw;
+   grid-area: 2/1/3/2;
+}
+.showBtns{
+   width: 50vw;
+   display: flex;
+   justify-content: space-around;
+   margin-top: 4vh;
+   grid-area: 3/1/4/2;
+}
+.leaveReview{
+   grid-area: 4/1/5/2;
+   margin-left: 5vw;
+}
+#comment{
+    border-radius: 10px;
+    background-color: rgb(241, 223, 218);
+    margin-top: 20px;
+}
+.review{
+   margin: 15px;
+   padding: 0;
+   height: 20vh;
+   grid-area: 5/1/7/2;
+   
+   border-radius:10px;
+   width:300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: aliceblue;
+}
+.review p{
+   margin: 0;
+  
+}
+.review h5{
+   margin: 0;
+  
+}
+.allReviews{
+   margin-top: 10vh;
+    margin-left: 2vw;
+   grid-area: 1/2/5/3;
+   display: flex;
+   flex-direction: column;
+    background-color: rgb(237, 232, 226);
+   border-radius: 20px;
+   
+}
+.revDelt{
+   position: relative;
+   bottom: 2vh;
+   left: 70px;
+}
+.h4AllRev{
+   grid-area:1/2/5/3 ;
+   margin: 10px 0px 0px 10px;
+  
 }
 }
