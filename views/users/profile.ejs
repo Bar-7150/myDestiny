@@ -1,44 +1,78 @@
 <% layout("/layouts/boilerplate") %>
-<div class="profile">
-      <% if (token==undefined) { %>
-        <!-- HTML content to display if the condition is true -->
-        <div>
-            <img src="" alt="">
+    <div class="profile">
+        <% if (token==undefined) { %>
+            <!-- HTML content to display if the condition is true -->
+            <div class="Intro">
+                <img src="" alt="" id="banner">
+                <img src="" alt="" id="avater">
+            </div>
 
-            <div>
-                <form action="/login" method="GET">
-                    <button>Login</button>
-                </form>
-                <form action="/signup" method="GET">
-                    <button>SignUp</button>
-                </form>
+
+
+            <div class="logSin">
+                
+                    <form action="/login" method="GET">
+                        <button class="btn ">Login</button>
+                    </form>
+
+               
+                    <form action="/signup" method="GET">
+                        <button class="btn">SignUp</button>
+                    </form>
+
+                
 
             </div>
 
 
-        </div>
 
-        <% } else { %>
-            <!-- HTML content to display if the condition is false -->
-            <img src="<%= %>" alt="">
-            <h1>
-                <%= %>
-            </h1>
-            <p>
-                <%= %>
-            </p>
 
-            <div>
-                <ul>
-                    <li><a href="/listings/new">Add Listing</a></li>
-                    <li><a href="/myListings">My Listing</a></li>
-                    <li><a href="/myReviews">My Reviews</a></li>
-                    <li><a href="/myBookings">My Bookings</a></li>
-                    <li><a href="/logout">LogOut</a></li>
+            <% } else { %>
+               
+                <!-- HTML content to display if the condition is false -->
+                
+                <div class="Intro">
+                    <img src="" alt="" id="banner">
+                    <img src="" alt="" id="avater">
+                    <div class="nameAndEmail">
+                        <h1 id="profileName">
+                           <%=user.username %>
+                        </h1>
+                        <p id="email">
+                            <%=user.email %>
+                        </p>
 
-                </ul>
-            </div>
-            <% } %>
+                    </div>
+                </div>
 
-</div>
-   
+
+                <div>
+                    
+                    <div class="options">
+                        <a href="/listings/new">Add Listing</a>
+                        
+                    </div> 
+                    <div class="options">
+                        <a href="/myListings">My Listing</a>
+                        
+                    </div> 
+                    <div class="options">
+                           <a href="/myReviews">My Reviews</a>
+
+                       </div> 
+                       <div class="options">
+
+                           <a href="/myBookings">My Bookings</a>
+                       </div> 
+                       <div class="options">
+
+                           <a href="/logout">LogOut</a>
+                       </div> 
+                       
+
+                    
+                </div>
+
+                <% } %>
+
+    </div>

@@ -20,7 +20,7 @@ const authMiddleware = require("./middlewares/authMiddleware.js")
 const reviewOwner = require("./middlewares/reviewOwner.js");
 const { log } = require('console');
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/myDestiny";
+const MONGO_URL = "mongodb://127.0.0.1:27017/myDestination";
 
 main()
   .then(() => {

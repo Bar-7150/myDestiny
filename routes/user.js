@@ -8,10 +8,18 @@ const jwt = require('jsonwebtoken');
 const authMiddleware = require('../middlewares/authMiddleware');
 const JWT_SECRET=process.env.JWT_SECRET
 
-router.get("/myProfile",(req,res)=>{
+router.get("/myProfile",async(req,res)=>{
   const token = req.cookies.token;
+  try{
+    const decodedUser = jwt.verify(token, JWT_SECRET);
+    req.userId = decodedUser.id;
+    let user=await User.findById(req.userId);
   
-  res.render("users/profile.ejs",{token});
+    res.render("users/profile.ejs",{token,user});
+  }catch{
+    res.render("users/profile.ejs",{token});
+  }
+   
 })
 router.get("/myListings",authMiddleware,async (req,res)=>{
     let user=await User.findById(req.userId);

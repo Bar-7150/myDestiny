@@ -204,11 +204,46 @@ footer a{
    left: 70px;
 }
 /*profile*/
-.profile{
-   height: 70vh;
+
+#banner{
+   height: 15vh;
+   width: 100vw;
+}
+#avater{
+   height: 12vh;
+   width: 12vh;
+   position: relative;
+   left:44vw;
+   bottom: 5vh;
+   border-radius: 50%;
+   z-index: 1;
+}
+.logSig{
+   display: flex;
+}
+/* #profileName{
+   position: relative;
+   bottom: 8vh;
+   left: 34vw;
+}
+#email{
+   position: relative;
+   bottom: 9vh;
+   left:35vw;
+} */
+ .nameAndEmail{
+  position: relative;
+  bottom: 8vh;
+   text-align: center;
+ }
+div a{
+   text-decoration: none;
 
 }
-
+.options{
+   height: 100px;
+   width: 100px;
+}
 @media screen and (max-width:650px){
    .allListings{
       grid-template-columns:1fr;
